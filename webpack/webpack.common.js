@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: Path.resolve(__dirname, '../src/scripts/index.js'),
+    viewer: Path.resolve(__dirname, '../src/scripts/viewer.js'),
   },
   output: {
     path: Path.join(__dirname, '../build'),
@@ -25,11 +26,13 @@ module.exports = {
       { from: Path.resolve(__dirname, '../public'), to: 'public' }
     ]),
     new HtmlWebpackPlugin({
-      template: Path.resolve(__dirname, '../src/index.html')
+      template: Path.resolve(__dirname, '../src/index.html'),
+      excludeChunks:['viewer']
+
     }),    
     new HtmlWebpackPlugin({  // Also generate a test.html
       filename: 'index2.html',
-      template: Path.resolve(__dirname, '../src/index2.html'),
+      template: Path.resolve(__dirname, '../src/viewer.html'),
       excludeChunks:['app']
 
     })
