@@ -56,7 +56,7 @@
     "ffmpeg": "0.0.4",
     "node-bluetooth": "^1.2.6",
     "node-media-server": "^2.1.4",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "ws": "^7.2.0"
   }
 }
